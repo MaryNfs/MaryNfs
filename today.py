@@ -53,7 +53,7 @@ def svg_overwrite(filename, age_data):
     svg = minidom.parse(filename)
     f = open(filename, mode='w', encoding='utf-8')
     tspan = svg.getElementsByTagName('tspan')
-    tspan[32].firstChild.data = age_data
+    tspan[33].firstChild.data = age_data
 
 
 
