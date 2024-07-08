@@ -52,7 +52,7 @@ def svg_overwrite(filename, age_data):
     """
     svg = minidom.parse(filename)
     f = open(filename, mode='w', encoding='utf-8')
-     tspans = svg.getElementsByTagName('tspan')
+    tspans = svg.getElementsByTagName('tspan')
     # tspan[32].firstChild.data = age_data
 
     uptime_index = None
