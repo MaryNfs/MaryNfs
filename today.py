@@ -52,8 +52,21 @@ def svg_overwrite(filename, age_data):
     """
     svg = minidom.parse(filename)
     f = open(filename, mode='w', encoding='utf-8')
-    tspan = svg.getElementsByTagName('tspan')
-    tspan[32].firstChild.data = age_data
+     tspans = svg.getElementsByTagName('tspan')
+    # tspan[32].firstChild.data = age_data
+
+    uptime_index = None
+    for i, tspan in enumerate(tspans):
+        if tspan.firstChild and 'Uptime' in tspan.firstChild.data:
+            uptime_index = i
+            break
+
+    # Check if 'Uptime' tspan is found
+    if uptime_index is not None and uptime_index + 1 < len(tspans):
+        # Update the next tspan element after 'Uptime'
+        tspans[uptime_index + 1].firstChild.data = age_data
+    else:
+        print("Uptime information not found or unable to update.")
 
 
 
