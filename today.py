@@ -124,9 +124,9 @@ if __name__ == '__main__':
     print('Calculation times:')
     # define global variable for owner ID and calculate user's creation date
     # e.g {'id': 'MDQ6VXNlcjU3MzMxMTM0'} and 2019-11-03T21:15:07Z for username 'Andrew6rant'
-    user_data, user_time = perf_counter(user_getter, USER_NAME)
-    OWNER_ID, acc_date = user_data
-    formatter('account data', user_time)
+    # user_data, user_time = perf_counter(user_getter, USER_NAME)
+    # OWNER_ID, acc_date = user_data
+    # formatter('account data', user_time)
     age_data, age_time = perf_counter(daily_readme, datetime.datetime(1994, 2, 20))
     formatter('age calculation', age_time)
     
